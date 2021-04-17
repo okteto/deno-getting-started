@@ -10,7 +10,7 @@ We are using a straightforward Deno app in this example. Before you start runnin
 
 Deploy your application to Kubernetes running the following command
 
-"`console
+```console
 $ kubectl apply -f k8s.yml
 ```
 
@@ -24,7 +24,7 @@ The [Okteto CLI](https://github.com/okteto/okteto) is an open-source project tha
 
 If you're using Mac or Linux, run the following command to install the Okteto CLI:
 
-"`console
+```console
 $ curl https://get.okteto.com -sSfL | sh
 ```
 
@@ -32,7 +32,7 @@ If you're using Windows, you need to [download the executable](https://downloads
 
 To confirm that the Okteto CLI works on your machine, run the following command:
 
-"`console
+```console
 okteto version
 ```
 
@@ -68,7 +68,7 @@ You can get more details about the Okteto manifest at our [official documentatio
 
 Run the following command to enter Okteto's development mode:
 
-"`console
+```console
 $ okteto up
 ```
 
@@ -87,7 +87,7 @@ default:hello-world app>
 
 This becomes your new terminal to run your Deno application every time you change its code. All the commands you run in this terminal are running in Kubernetes. Okteto opens a terminal in a container that has all the tooling you need for developing in Deno. To give it a try, run the following command:
 
-"`console
+```console
 $ deno run --allow-net server.ts
 ```
 
@@ -99,7 +99,7 @@ HTTP webserver running.  Access it at:  http://localhost:8080/
 
 To confirm that the app works, launch a new terminal, and run the following command:
 
-"`console
+```console
 $ curl localhost:8080
 ```
 
@@ -122,13 +122,13 @@ for await (const request of server) {
 
 Go back to the Okteto terminal, cancel the command (Ctrl + C) and rerun the deno command (as you would typically do if you were testing your application locally):
 
-"`console
+```console
 $ curl localhost:8080
 ```
 
 Go back to the other terminal where you're testing your application, and rerun the curl command:
 
-"`console
+```console
 $ deno run --allow-net server.ts
 ```
 
@@ -144,7 +144,7 @@ Okteto enables you to debug your applications directly from your favorite IDE. L
 
 Go back to the Okteto terminal, cancel the command (Ctrl + C) and run the following deno command:
 
-"`console
+```console
 $ deno run --inspect --allow-net server.ts
 ```
 
@@ -155,7 +155,7 @@ HTTP webserver running.  Access it at:  http://localhost:8080/
 
 Open the **Debug extension** and run the **Remote Debugging** debug configuration (or press the F5 shortcut):
 
-"`json
+```json
 {
   "version": "0.2.0",
   "configurations": [
