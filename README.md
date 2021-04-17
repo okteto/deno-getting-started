@@ -60,7 +60,7 @@ Without explaining every line of the above manifest, let's highlight and explain
 - `name`: the name of the Kubernetes deployment you want to put on "development mode."
 - `image`: the image used by the development container
 - `command`: the start command of the development container
-- `forward`: a list of ports to forward from your development container.
+- `forward`: a list of ports to forward from your local machine to your development container.
 
 You can get more details about the Okteto manifest at our [official documentation site](https://okteto.com/docs/reference/manifest/index.html).
 
@@ -107,6 +107,8 @@ $ curl localhost:8080
 hello deno-world!
 ```
 
+Did you notice that your application is available in port 8080? This is because the Okteto CLI automatically forwarding port 8080 to your remote development container. 
+
 ## Step 6: See Application Changes in Kubernetes
 
 Don't close the Okteto terminal, and let's change something in the Deno sample app.
@@ -123,13 +125,13 @@ for await (const request of server) {
 Go back to the Okteto terminal, cancel the command (Ctrl + C) and rerun the deno command (as you would typically do if you were testing your application locally):
 
 ```console
-$ curl localhost:8080
+$ deno run --allow-net server.ts
 ```
 
 Go back to the other terminal where you're testing your application, and rerun the curl command:
 
 ```console
-$ deno run --allow-net server.ts
+$ curl localhost:8080
 ```
 
 ```
@@ -175,6 +177,6 @@ Open the **Debug extension** and run the **Remote Debugging** debug configuratio
 }
 ```
 
-Add a breakpoint on server.ts, line 10. Go back to the local terminal, and call the application again. This time, the execution will halt at your breakpoint. You can then inspect the request, the available variables, etc.
+Add a breakpoint on `server.ts`, line 10. Go back to the local terminal, and call the application again. This time, the execution will halt at your breakpoint. You can then inspect the request, the available variables, etc.
 
 Your deno code runs in Kubernetes, but you can debug it from your local machine without any extra services or tools. Pretty cool, no? 😉
