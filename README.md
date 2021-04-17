@@ -58,8 +58,8 @@ forward:
 Without explaining every line of the above manifest, let's highlight and explain a few of them:
 
 - `name`: the name of the Kubernetes deployment you want to put on "development mode."
-- `image`: the image used by the development container
-- `command`: the start command of the development container
+- `image`: the image used by the development container, with all the tools you need to build a deno app.
+- `command`: the start command of the development container.
 - `forward`: a list of ports to forward from your local machine to your development container.
 
 You can get more details about the Okteto manifest at our [official documentation site](https://okteto.com/docs/reference/manifest/index.html).
