@@ -1,0 +1,11 @@
+name: hello-world
+autocreate: true
+image: okteto/deno:1.9
+command: bash
+volumes:
+  - /deno-dir/
+sync:
+  - .:/usr/src/app
+forward:
+  - 8080:8080
+  - 9229:9229
