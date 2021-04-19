@@ -88,7 +88,7 @@ default:hello-world app>
 This becomes your new terminal to run your Deno application every time you change its code. All the commands you run in this terminal are running in Kubernetes. Okteto opens a terminal in a container that has all the tooling you need for developing in Deno. To give it a try, run the following command:
 
 ```console
-$ deno run --allow-net server.ts
+$ deno run --allow-net app.ts
 ```
 
 You should see an output like the following where you can see how the app is compiling and launching the webserver:
@@ -125,7 +125,7 @@ for await (const request of server) {
 Go back to the Okteto terminal, cancel the command (Ctrl + C) and rerun the deno command (as you would typically do if you were testing your application locally):
 
 ```console
-$ deno run --allow-net server.ts
+$ deno run --allow-net app.ts
 ```
 
 Go back to the other terminal where you're testing your application, and rerun the curl command:
@@ -147,7 +147,7 @@ Okteto enables you to debug your applications directly from your favorite IDE. L
 Go back to the Okteto terminal, cancel the command (Ctrl + C) and run the following deno command:
 
 ```console
-$ deno run --inspect --allow-net server.ts
+$ deno run --inspect --allow-net app.ts
 ```
 
 ```
@@ -177,6 +177,6 @@ Open the **Debug extension** and run the **Remote Debugging** debug configuratio
 }
 ```
 
-Add a breakpoint on `server.ts`, line 10. Go back to the local terminal, and call the application again. This time, the execution will halt at your breakpoint. You can then inspect the request, the available variables, etc.
+Add a breakpoint on `app.ts`, line 10. Go back to the local terminal, and call the application again. This time, the execution will halt at your breakpoint. You can then inspect the request, the available variables, etc.
 
 Your deno code runs in Kubernetes, but you can debug it from your local machine without any extra services or tools. Pretty cool, no? 😉
