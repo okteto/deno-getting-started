@@ -1,7 +1,5 @@
 # Getting Started with Okteto and Deno
 
-[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/okteto/deno-getting-started)
-
 This example shows how to use [Okteto](https://github.com/okteto/okteto) to develop a cloud-native app with [Deno](https://deno.land) and Kubernetes manifests.
  
 ## Step 1: Deploy a Simple Deno Application to Kubernetes
